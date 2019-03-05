@@ -4,7 +4,6 @@ using Xunit;
 
 namespace Protacon.NetCore.WebApi.ApiKeyAuth.Tests
 {
-
     public class ApiKeyTests
     {
         [Fact]

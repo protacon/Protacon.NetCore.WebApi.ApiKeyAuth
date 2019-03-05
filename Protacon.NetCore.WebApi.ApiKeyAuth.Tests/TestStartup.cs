@@ -48,5 +48,7 @@ namespace Protacon.NetCore.WebApi.ApiKeyAuth.Tests
             app.UseSwagger();
             app.UseMvc();
         }
+
+        public static void Main(string[] args) {}
     }
 }
