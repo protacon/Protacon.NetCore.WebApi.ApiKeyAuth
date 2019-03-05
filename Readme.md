@@ -23,6 +23,8 @@
             options.ValidApiKeys = keys;
         });
 
+    // Or .AddApiKeyAuth("here_is_apikey", "here_is_apikey2" ...)
+
     // Configuration (this comes from net core 2.x+, not from this library.)
     app.UseAuthentication();
 ```
@@ -30,7 +32,7 @@
 ## Using on authorization
 
 ```cs
-    [Authorize(AuthenticationSchemes = "ApiKey")]
+    [Authorize(AuthenticationSchemes = ApiKey.Scheme)]
     public class ExampleController : Controller
     {
     }
@@ -39,7 +41,7 @@
 ```cs
     public class ExampleController : Controller
     {
-        [Authorize(AuthenticationSchemes = "ApiKey")]
+        [Authorize(AuthenticationSchemes = ApiKey.Scheme)]
         [HttpPost("...")]
         public IActionResult Method() {}
     }
@@ -52,7 +54,8 @@ Package adds support for webapi fields on swagger documentation.
 ```cs
     services.AddSwaggerGen(c =>
     {
-        c.OperationFilter<ApplyApiKeySecurityToDocument>();
+        c.AddSecurityDefinition("ApiKey", ApiKey.SecurityScheme);
+        c.AddSecurityRequirement(ApiKey.SecurityRequirement("ApiKey"));
     });
 ```
 
