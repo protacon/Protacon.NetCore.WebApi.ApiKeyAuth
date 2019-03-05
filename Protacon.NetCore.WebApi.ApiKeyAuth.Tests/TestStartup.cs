@@ -22,7 +22,7 @@ namespace Protacon.NetCore.WebApi.ApiKeyAuth.Tests
                 .AddAuthentication()
                 .AddApiKeyAuth(options =>
                 {
-                    options.Keys = new[] {"apiKeyForTests"};
+                    options.ValidApiKeys = new[] {"apiKeyForTests"};
                 });
 
             services.AddSwaggerGen(c =>
