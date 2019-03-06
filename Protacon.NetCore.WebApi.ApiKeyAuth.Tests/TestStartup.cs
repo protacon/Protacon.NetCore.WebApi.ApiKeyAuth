@@ -38,8 +38,8 @@ namespace Protacon.NetCore.WebApi.ApiKeyAuth.Tests
                         Description = ""
                     });
 
-                c.AddSecurityDefinition("ApiKey", ApiKey.SecurityScheme);
-                c.AddSecurityRequirement(ApiKey.SecurityRequirement("ApiKey"));
+                c.AddSecurityDefinition("ApiKey", ApiKey.OpenApiSecurityScheme);
+                c.AddSecurityRequirement(ApiKey.OpenApiSecurityRequirement("ApiKey"));
             });
 
             services.AddMvc();

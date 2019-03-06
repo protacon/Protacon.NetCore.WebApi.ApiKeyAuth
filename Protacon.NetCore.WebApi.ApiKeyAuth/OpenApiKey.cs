@@ -6,7 +6,7 @@ namespace Protacon.NetCore.WebApi.ApiKeyAuth
     public static class ApiKey
     {
         public const string Scheme = "ApiKey";
-        public static OpenApiSecurityScheme SecurityScheme => new OpenApiSecurityScheme
+        public static OpenApiSecurityScheme OpenApiSecurityScheme => new OpenApiSecurityScheme
         {
             Description = "Apikey authorization. Example: \"Authorization: ApiKey {key}\"",
             Name = "Authorization",
@@ -15,7 +15,7 @@ namespace Protacon.NetCore.WebApi.ApiKeyAuth
             Scheme = "ApiKey"
         };
 
-        public static OpenApiSecurityRequirement SecurityRequirement(string schemeId)
+        public static OpenApiSecurityRequirement OpenApiSecurityRequirement(string schemeId)
         {
             return new OpenApiSecurityRequirement
             {
