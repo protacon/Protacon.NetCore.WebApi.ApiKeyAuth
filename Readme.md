@@ -50,7 +50,8 @@
 
 # Support for swagger documentation
 
-Package adds support for webapi fields on swagger documentation.
+Package adds support for webapi fields on swagger documentation. However
+this version requires `Swashbuckle.AspNetCore` of attleast version `5.0.0-beta`.
 
 ```cs
     services.AddSwaggerGen(c =>
